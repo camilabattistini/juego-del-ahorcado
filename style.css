@@ -1,0 +1,33 @@
+.logo {
+    width: 6rem;
+}
+
+.main {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerBotones {
+    margin: auto;
+}
+
+.boton {
+    font-size: 17px; 
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+#iniciarJuego {
+    height: 4rem;
+    width: 15rem;
+}
+
+#agregarNuevaPalabra {
+    height: 2rem;
+    width: 12rem;
+}

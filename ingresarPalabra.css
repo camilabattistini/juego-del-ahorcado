@@ -1,0 +1,121 @@
+* {
+    font-size: 17px;
+}
+
+body {
+    background-color: #F3F5FC;
+    /*display: inline-block;*/
+}
+
+main {
+    display: flex;
+}
+
+.logo {
+    width: 100px;
+    /* float: left top; */
+    margin: 10px;
+}
+
+form {
+    margin: auto;
+}
+
+form .container-botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ingresarTexto {
+    width: 500px;
+    height: 400px;
+    border: none;
+    color: #0A3871;
+    /*margin: 0 auto;*/
+}
+
+.signo {
+    display: inline-block;
+    width: 1.23em;
+    color: white;
+    text-align: center;
+    background-color: #495057;
+    border-radius: 50%;
+}
+
+.textoLetrasMinusculas {
+    font-size: 12px;
+}
+
+.campoIzquierda .container {
+    display: flex;
+    margin: 0 5%;
+    justify-content: space-between;
+}
+
+.boton {
+    display: flex;
+    flex-direction: row;
+    width: 49%;
+    background-color: #D8DFE8;
+    height: 2.5rem;
+    border-radius: 24px;
+    border-color: #0A3871;
+    color: #0A3871;
+}
+
+#encriptar {
+    background-color: #0A3871;
+    color: white;
+    border: none;
+}
+
+/*PARTE RESPONSIVA*/
+
+/*TABLET (810px X 1080px)*/
+
+@media(max-width: 810px) {
+    body {
+        height: 1080px;
+    }
+
+    main {
+        height: 90%;
+    }
+}
+
+/*CELULAR (428px X 926px)*/
+
+@media (max-width: 428px) {
+    main {
+        flex-direction: column;
+        height: 70%;
+    }
+
+    form {
+        margin: 15% auto 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .ingresarTexto {
+        width: 380px;
+        margin: 10px;
+    }
+
+    .textoLetrasMinusculas {
+        margin: 10px;
+    }
+
+    form .container-botones {
+        flex-direction: column;
+        justify-content: space-around;
+        height: 24%;
+    }
+
+    .boton {
+        width: 100%;
+        height: 34%;
+    }
+}

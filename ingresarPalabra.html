@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingrese una palabra</title>
+    <link rel="stylesheet" href="ingresarPalabra.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="imagenes/Logo.png"/>
+    </header>
+    <main>
+        <form>
+            <textarea class="ingresarTexto" cols="40" rows="6" placeholder="Ingrese una palabra"></textarea>
+            <p class="textoLetrasMinusculas"><span class="signo"> ! </span> Máx. de 8 letras</p>
+            <div class="container-botones">
+                <input type="button" value="Guardar y empezar" class="boton" id="encriptar" onclick="encriptarTexto()" />
+                <input type="button" value="Cancelar" class="boton" id="desencriptar" onclick="desencriptarTexto()" />
+            </div>
+        </form>
+    </main>
+</body>
+</html>
