@@ -1,5 +1,9 @@
 body {
-    height: 1280px;
+    height: 600px;
+}
+
+header {
+    height: 10%;
 }
 
 .logo {
@@ -10,63 +14,65 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 90%;
+    height: 80%;
 }
 
 form {
-    margin: auto;
-    height: 85%;
+    margin: 0 auto;
+    height: 100%;
     width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: initial;
+    justify-content: space-around;
 }
 
 /*STYLE PARA container-ahorcado*/
 .container-ahorcado {
     background-color: aquamarine;
-    margin: 0 auto;
-    width: 32%;
-    height: 53%;
+    height: 75%;
 }
 /*STYLE PARA container-palabra*/
 .container-palabra {
     background-color: rgb(242, 164, 245);
-    height: 20%;
+    height: 11%;
     width: 70%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 /*STYLE para container-letras*/
 .container-letras {
     background-color: yellowgreen;
     width: 90%;
-    height: 45%;
-    margin: auto;
+    height: 50%;
 }
 /*STYLE para container-lineas*/
 .container-lineas {
     background-color:rgb(156, 141, 211);
     width: 90%;
-    height: 45%;
-    margin: auto;
+    height: 25%;
 }
 /*STYLE PARA container-botones*/
 .container-botones {
     background-color: rgb(156, 141, 211);
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .boton {
     display: flex;
-    flex-direction: row;
-    width: 300px;
+    width: 43%;
     background-color: #D8DFE8;
-    height: 3rem;
+    height: 2.5rem;
     border-radius: 24px;
     border-color: #0A3871;
     color: #0A3871;
-    margin: 1rem;
 }
 
 #nuevoJuego {

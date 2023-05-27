@@ -1,9 +1,17 @@
+body {
+    height: 600px;
+}
+
+header {
+    height: 10%;
+}
+
 .logo {
     width: 6rem;
 }
 
 .main {
-    height: 500px;
+    height: 80%;
     display: flex;
     justify-content: center;
     flex-direction: column;

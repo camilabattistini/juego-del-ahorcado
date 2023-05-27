@@ -3,12 +3,13 @@
 }
 
 body {
-    background-color: #F3F5FC;
+    height: 600px;
+    /*background-color: #F3F5FC;*/
     /*display: inline-block;*/
 }
 
-main {
-    display: flex;
+header {
+    height: 10%;
 }
 
 .logo {
@@ -17,8 +18,17 @@ main {
     margin: 10px;
 }
 
+main {
+    display: flex;
+    height: 80%;
+}
+
 form {
-    margin: auto;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 form .container-botones {
@@ -29,10 +39,9 @@ form .container-botones {
 
 .ingresarTexto {
     width: 500px;
-    height: 400px;
+    height: 300px;
     border: none;
     color: #0A3871;
-    margin: auto
 }
 
 .signo {
@@ -46,6 +55,7 @@ form .container-botones {
 
 .textoLetrasMinusculas {
     font-size: 12px;
+    margin: 0;
 }
 
 .campoIzquierda .container {
