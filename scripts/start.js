@@ -1,4 +1,5 @@
 /*import { listaPalabras } from "./ingresarPalabra.js";*/
+const containerLineas = document.querySelector(".container-lineas");
 
 const listaPalabras = ['HTML', 'CSS', 'JAVASCRIPT', 'ANGULAR', 'REACT', 'NODE']; /*DESPUES TENGO QUE BORRAR ESTO E IMPORTAR LA LISTA DEL ARCHIVO ingresarPalabra.js */
 var palabraSecreta = '';
@@ -6,6 +7,15 @@ function crearPalabraSecreta() {
     indice = Math.floor(Math.random() * listaPalabras.length)
     palabraSecreta = listaPalabras[indice];
     console.log(palabraSecreta);
+    return palabraSecreta;
+}
+
+function mostrarGuiones() {
+    for(var i = 0; i < palabraSecreta.length; i++) {
+        newDiv = document.createElement("div");
+        newDiv.className = "guion";
+        containerLineas.append(newDiv);
+    }
 }
 /*var pantalla = document.querySelector("canvas");
 var pincel = pantalla.getContext("2d");
