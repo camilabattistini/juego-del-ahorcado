@@ -33,6 +33,9 @@ header {
 #iniciarJuego {
     height: 4rem;
     width: 15rem;
+    background-color: #0A3871;
+    color: white;
+    justify-content: center;
 }
 
 #agregarNuevaPalabra {

@@ -17,13 +17,26 @@ function mostrarGuiones() {
         containerLineas.append(newDiv);
     }
 }
-/*var pantalla = document.querySelector("canvas");
+
+function capturarEvento(event) {
+    var codigo = event.which || event.keyCode;
+    if(codigo >= 65 && codigo <= 90) {
+        console.log(String.fromCharCode(codigo));
+    }
+    if(codigo >= 48 && codigo <= 57) {
+        console.log("No se permiten números");
+    }
+}
+
+crearPalabraSecreta(), mostrarGuiones();
+
+var pantalla = document.querySelector("canvas");
 var pincel = pantalla.getContext("2d");
 
 /*ESTRUCTURA*/
-/*pincel.fillStyle = "#0A3871"
+pincel.fillStyle = "#0A3871"
 pincel.fillRect(0,510,300,10);
-pincel.fillRect(50,510,10,-400);
+/*pincel.fillRect(50,510,10,-400);
 pincel.fillRect(60,110,180,10);
 pincel.fillRect(230,120,10,50);
 
