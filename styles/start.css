@@ -27,15 +27,28 @@ form {
     justify-content: space-around;
 }
 
+.container-ahorcado-e-input {
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 /*STYLE PARA container-ahorcado*/
 .container-ahorcado {
-    background-color: aquamarine;
-    height: 75%;
+    background-color: #c2ffea;
+    height: 100%;
+    width: 55%;
+}
+
+.container-input {
+    height: fit-content;
+    margin-top: auto;
 }
 /*STYLE PARA container-palabra*/
 .container-palabra {
-    background-color: rgb(242, 164, 245);
-    height: 11%;
+    height: 7%;
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -44,14 +57,21 @@ form {
 }
 /*STYLE para container-letras*/
 .container-letras {
-    background-color: yellowgreen;
     width: 90%;
-    height: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container-letra {
+    height: 100%;
+    width: 10%;
 }
 /*STYLE para container-lineas*/
 .container-lineas {
     width: 90%;
-    height: 25%;
+    height: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -59,13 +79,18 @@ form {
 
 .guion {
     display: flex;
-    height: 100%;
+    height: 5px;
     width: 10%;
     background-color: #0A3871;
 }
+
+.container-letras-incorrectas {
+    background-color: #ecebeb;
+    width: 70%;
+    height: 7%;
+}
 /*STYLE PARA container-botones*/
 .container-botones {
-    background-color: rgb(156, 141, 211);
     height: 10%;
     display: flex;
     flex-direction: row;

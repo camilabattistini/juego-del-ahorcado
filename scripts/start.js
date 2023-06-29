@@ -1,5 +1,6 @@
 /*import { listaPalabras } from "./ingresarPalabra.js";*/
 const containerLineas = document.querySelector(".container-lineas");
+const containerLetras = document.querySelector(".container-letras");
 
 const listaPalabras = ['HTML', 'CSS', 'JAVASCRIPT', 'ANGULAR', 'REACT', 'NODE']; /*DESPUES TENGO QUE BORRAR ESTO E IMPORTAR LA LISTA DEL ARCHIVO ingresarPalabra.js */
 var palabraSecreta = '';
@@ -10,11 +11,15 @@ function crearPalabraSecreta() {
     return palabraSecreta;
 }
 
+/*Muestra guiones y crea los divs para cada letra de la palabra */
 function mostrarGuiones() {
     for(var i = 0; i < palabraSecreta.length; i++) {
         newDiv = document.createElement("div");
+        newDivLetra = document.createElement("div");
         newDiv.className = "guion";
+        newDivLetra.className = "container-letra";
         containerLineas.append(newDiv);
+        containerLetras.append(newDivLetra);
     }
 }
 

@@ -14,16 +14,20 @@
     </header>
     <main>
         <form>
-            <div class="container-ahorcado" ><canvas width="300" height="520"></canvas></div>
+            <div class="container-ahorcado-e-input">
+                <div class="container-ahorcado" ><canvas width="300" height="520"></canvas></div>
+                <input class="container-input" onkeydown="capturarEvento(event)" placeholder="Ingrese las letras aquí"/>
+            </div>
             <div class="container-palabra" >
                 <div class="container-letras"></div>
                 <div class="container-lineas"></div>
             </div>
+            <div class="container-letras-incorrectas"></div>
             <div class="container-botones">
                 <input type="button" value="Nuevo juego" class="boton" id="nuevoJuego" onclick="crearPalabraSecreta(), mostrarGuiones()" />
                 <input type="button" value="Desistir" class="boton" id="desistir" onclick="" />
             </div>
-            <input onkeydown="capturarEvento(event)" placeholder="Ingrese las letras aquí"/>
+            
         </form>
     </main>
     <footer class="footer"><h1>©Copyright 2023 Camila Battistini</h1></footer>
