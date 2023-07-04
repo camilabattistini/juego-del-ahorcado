@@ -17,7 +17,7 @@ function mostrarGuiones() {
         newDiv = document.createElement("div");
         newDivLetra = document.createElement("div");
         newDiv.className = "guion";
-        newDivLetra.className = "container-letra";
+        newDivLetra.className = `container-letra${i}`;
         containerLineas.append(newDiv);
         containerLetras.append(newDivLetra);
     }
@@ -26,10 +26,30 @@ function mostrarGuiones() {
 function capturarEvento(event) {
     var codigo = event.which || event.keyCode;
     if(codigo >= 65 && codigo <= 90) {
-        console.log(String.fromCharCode(codigo));
+        var codigoMayuscula = String.fromCharCode(codigo);
+        dibujarLetraCorrecta(codigoMayuscula);
     }
-    if(codigo >= 48 && codigo <= 57) {
-        console.log("No se permiten números");
+    else {
+        console.log("Solo se permiten letras");
+    }
+}
+
+function dibujarLetraCorrecta(codigoMayuscula) {
+    var cantidadDeLetrasIncorrectas = 0;
+    for(var i = 0; i < palabraSecreta.length; i++) {
+        if(codigoMayuscula == palabraSecreta[i]) {
+            divLetraCorrecta = document.querySelector(`.container-letra${i}`);
+            divLetraCorrecta.innerHTML = codigoMayuscula;
+            //ACA TENGO QUE ARMAR EL CODIGO PARA QUE LA LETRA SE MUESTRE POR PANTALLA
+        }
+        else {
+            console.log('La letra es incorrecta');
+            cantidadDeLetrasIncorrectas = cantidadDeLetrasIncorrectas + 1;
+        }
+    }
+    console.log(`La cantidad de letras incorrectas es: ${cantidadDeLetrasIncorrectas}`);
+    if(cantidadDeLetrasIncorrectas == palabraSecreta.length) {
+        //codigo para mostrar una parte del ahorcado
     }
 }
 
