@@ -1,6 +1,7 @@
 /*import { listaPalabras } from "./ingresarPalabra.js";*/
 const containerLineas = document.querySelector(".container-lineas");
 const containerLetras = document.querySelector(".container-letras");
+const containerLetrasIncorrectas = document.querySelector(".container-letras-incorrectas");
 
 const listaPalabras = ['HTML', 'CSS', 'JAVASCRIPT', 'ANGULAR', 'REACT', 'NODE']; /*DESPUES TENGO QUE BORRAR ESTO E IMPORTAR LA LISTA DEL ARCHIVO ingresarPalabra.js */
 var palabraSecreta = '';
@@ -17,7 +18,8 @@ function mostrarGuiones() {
         newDiv = document.createElement("div");
         newDivLetra = document.createElement("div");
         newDiv.className = "guion";
-        newDivLetra.className = `container-letra${i}`;
+        newDivLetra.setAttribute("id", `container-letra${i}`);
+        newDivLetra.className = 'container-letra';
         containerLineas.append(newDiv);
         containerLetras.append(newDivLetra);
     }
@@ -38,20 +40,34 @@ function dibujarLetraCorrecta(codigoMayuscula) {
     var cantidadDeLetrasIncorrectas = 0;
     for(var i = 0; i < palabraSecreta.length; i++) {
         if(codigoMayuscula == palabraSecreta[i]) {
-            divLetraCorrecta = document.querySelector(`.container-letra${i}`);
+            divLetraCorrecta = document.querySelector(`#container-letra${i}`);
             divLetraCorrecta.innerHTML = codigoMayuscula;
             //ACA TENGO QUE ARMAR EL CODIGO PARA QUE LA LETRA SE MUESTRE POR PANTALLA
         }
         else {
-            console.log('La letra es incorrecta');
             cantidadDeLetrasIncorrectas = cantidadDeLetrasIncorrectas + 1;
         }
     }
+    verificarSiLaLetraEsIncorrecta(cantidadDeLetrasIncorrectas, codigoMayuscula);
+}
+
+function verificarSiLaLetraEsIncorrecta(cantidadDeLetrasIncorrectas, codigoMayuscula) {
     console.log(`La cantidad de letras incorrectas es: ${cantidadDeLetrasIncorrectas}`);
     if(cantidadDeLetrasIncorrectas == palabraSecreta.length) {
-        //codigo para mostrar una parte del ahorcado
+        dibujarLetraIncorrecta(codigoMayuscula);
+        console.log('Se muestra una parte del dibujo');
     }
 }
+
+listaLetrasIncorrectas = [];
+
+function dibujarLetraIncorrecta(codigoMayuscula) {
+    listaLetrasIncorrectas.push(codigoMayuscula);
+    console.log(listaLetrasIncorrectas);
+    containerLetrasIncorrectas.innerHTML = listaLetrasIncorrectas.toString().replace(/,/g, " ");
+}
+
+
 
 crearPalabraSecreta(), mostrarGuiones();
 

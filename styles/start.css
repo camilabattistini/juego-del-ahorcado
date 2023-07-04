@@ -67,6 +67,8 @@ form {
 .container-letra {
     height: 100%;
     width: 10%;
+    color: #0A3871;
+    text-align: center;
 }
 /*STYLE para container-lineas*/
 .container-lineas {
@@ -88,6 +90,11 @@ form {
     background-color: #ecebeb;
     width: 70%;
     height: 7%;
+    text-align: center;
+    color: #0A3871;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 /*STYLE PARA container-botones*/
 .container-botones {
