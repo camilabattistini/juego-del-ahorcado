@@ -2,9 +2,16 @@
 const containerLineas = document.querySelector(".container-lineas");
 const containerLetras = document.querySelector(".container-letras");
 const containerLetrasIncorrectas = document.querySelector(".container-letras-incorrectas");
-
 const listaPalabras = ['HTML', 'CSS', 'JAVASCRIPT', 'ANGULAR', 'REACT', 'NODE']; /*DESPUES TENGO QUE BORRAR ESTO E IMPORTAR LA LISTA DEL ARCHIVO ingresarPalabra.js */
 var palabraSecreta = '';
+//CANVAS
+var pantalla = document.querySelector("canvas");
+var pincel = pantalla.getContext("2d");
+
+/*ESTRUCTURA*/
+pincel.fillStyle = "#0A3871"
+pincel.fillRect(0,510,300,10);
+
 function crearPalabraSecreta() {
     indice = Math.floor(Math.random() * listaPalabras.length)
     palabraSecreta = listaPalabras[indice];
@@ -55,7 +62,6 @@ function verificarSiLaLetraEsIncorrecta(cantidadDeLetrasIncorrectas, codigoMayus
     console.log(`La cantidad de letras incorrectas es: ${cantidadDeLetrasIncorrectas}`);
     if(cantidadDeLetrasIncorrectas == palabraSecreta.length) {
         dibujarLetraIncorrecta(codigoMayuscula);
-        console.log('Se muestra una parte del dibujo');
     }
 }
 
@@ -65,58 +71,99 @@ function dibujarLetraIncorrecta(codigoMayuscula) {
     listaLetrasIncorrectas.push(codigoMayuscula);
     console.log(listaLetrasIncorrectas);
     containerLetrasIncorrectas.innerHTML = listaLetrasIncorrectas.toString().replace(/,/g, " ");
+    dibujarAhorcado();
 }
 
+// const listaDeGraficos = {1 : pincel.fillRect(50,510,10,-400), 2 : "Dibujando cabeza", 3 : "Dibujando tronco", 4 : "Dibujando pie izquierdo", 5 : "Dibujando pie derecho", 6 : "Dibujando brazo izquierdo"};
+
+function dibujarAhorcado() {
+    var contadorDeGraficos = listaLetrasIncorrectas.length;
+
+    //DIBUJANDO HORCA
+    if(contadorDeGraficos == 1) {
+        
+    }
+    else if(contadorDeGraficos == 2) {
+        
+    }
+    else if(contadorDeGraficos == 3) {
+        
+    }
+    //DIBUJANDO CABEZA
+    else if(contadorDeGraficos == 4) {
+        
+    }
+    //DIBUJANDO TORSO
+    else if(contadorDeGraficos == 5) {
+        
+    }
+    //DIBUJANDO BRAZO IZQUIERDO
+    else if(contadorDeGraficos == 6) {
+        
+    }
+    //DIBUJANDO BRAZO DERECHO
+    else if(contadorDeGraficos == 7) {
+        
+    }
+    //DIBUJANDO PIERNA IZQUIERDA
+    else if(contadorDeGraficos == 8) {
+        
+    }
+    //DIBUJANDO PIERNA DERECHA
+    else if(contadorDeGraficos == 9) {
+        
+    }
+
+}
 
 
 crearPalabraSecreta(), mostrarGuiones();
 
-var pantalla = document.querySelector("canvas");
-var pincel = pantalla.getContext("2d");
+//DIBUJANDO HORCA
+pincel.fillRect(50,510,10,-400);
 
-/*ESTRUCTURA*/
-pincel.fillStyle = "#0A3871"
-pincel.fillRect(0,510,300,10);
-/*pincel.fillRect(50,510,10,-400);
 pincel.fillRect(60,110,180,10);
+
 pincel.fillRect(230,120,10,50);
 
-/*EMPLIEZA EL CUERPO*/ 
-/*pincel.arc(235,209,40,0,2*3.14);
+//DIBUJANDO CABEZA
+pincel.arc(235,209,40,0,2*3.14);
 pincel.fill();
 pincel.beginPath();
-pincel.fillStyle = "aquamarine";
+pincel.fillStyle = "white";
 pincel.arc(235,209,30,0,2*3.14);
 pincel.fill();
-/*torso*/
-/*pincel.beginPath();
+
+//DIBUJANDO TORSO
+pincel.beginPath();
 pincel.fillStyle = "#0A3871";
 pincel.fillRect(230,248,10,100);
-/*brazo izquierdo*/
-/*pincel.moveTo(230,260);
+
+//DIBUJANDO BRAZO IZQUIERDO
+pincel.moveTo(230,260);
 pincel.lineTo(205,280);
 pincel.lineTo(210,286);
 pincel.lineTo(230,270);
 pincel.fill();
-/*brazo derecho*/
-/*pincel.moveTo(240,260);
+
+//DIBUJANDO BRAZO DERECHO
+pincel.moveTo(240,260);
 pincel.lineTo(265,280);
 pincel.lineTo(260,286);
 pincel.lineTo(240,270);
 pincel.fill();
-/*pierna izquierda*/
-/*pincel.moveTo(230,343);
+
+//DIBUJANDO PIERNA IZQUIERDA
+pincel.moveTo(230,343);
 pincel.lineTo(190,393);
 pincel.lineTo(195,398);
 pincel.lineTo(235,348);
 pincel.fill();
-/*pierna derecha*/
-/*pincel.moveTo(240,343);
+
+//DIBUJANDO PIERNA DERECHA
+pincel.moveTo(240,343);
 pincel.lineTo(280,393);
 pincel.lineTo(275,398);
 pincel.lineTo(235,348);
 pincel.fill();
-pincel.beginPath();*/
-
-
-
+pincel.beginPath();
