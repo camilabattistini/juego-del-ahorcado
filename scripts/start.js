@@ -81,89 +81,64 @@ function dibujarAhorcado() {
 
     //DIBUJANDO HORCA
     if(contadorDeGraficos == 1) {
-        
+        pincel.fillRect(50,510,10,-400);
     }
     else if(contadorDeGraficos == 2) {
-        
+        pincel.fillRect(60,110,180,10);
     }
     else if(contadorDeGraficos == 3) {
-        
+        pincel.fillRect(230,120,10,50);
     }
     //DIBUJANDO CABEZA
-    else if(contadorDeGraficos == 4) {
-        
+    else if (contadorDeGraficos == 4) {
+        pincel.arc(235, 209, 40, 0, 2 * 3.14);
+        pincel.fill();
+        pincel.beginPath();
+        pincel.fillStyle = "white";
+        pincel.arc(235, 209, 30, 0, 2 * 3.14);
+        pincel.fill();
     }
     //DIBUJANDO TORSO
-    else if(contadorDeGraficos == 5) {
-        
+    else if (contadorDeGraficos == 5) {
+        pincel.beginPath();
+        pincel.fillStyle = "#0A3871";
+        pincel.fillRect(230, 248, 10, 100);
     }
     //DIBUJANDO BRAZO IZQUIERDO
-    else if(contadorDeGraficos == 6) {
-        
+    else if (contadorDeGraficos == 6) {
+        pincel.moveTo(230, 260);
+        pincel.lineTo(205, 280);
+        pincel.lineTo(210, 286);
+        pincel.lineTo(230, 270);
+        pincel.fill();
     }
     //DIBUJANDO BRAZO DERECHO
-    else if(contadorDeGraficos == 7) {
-        
+    else if (contadorDeGraficos == 7) {
+        pincel.moveTo(240, 260);
+        pincel.lineTo(265, 280);
+        pincel.lineTo(260, 286);
+        pincel.lineTo(240, 270);
+        pincel.fill();
     }
     //DIBUJANDO PIERNA IZQUIERDA
-    else if(contadorDeGraficos == 8) {
-        
+    else if (contadorDeGraficos == 8) {
+        pincel.moveTo(230, 343);
+        pincel.lineTo(190, 393);
+        pincel.lineTo(195, 398);
+        pincel.lineTo(235, 348);
+        pincel.fill();
     }
     //DIBUJANDO PIERNA DERECHA
-    else if(contadorDeGraficos == 9) {
-        
+    else if (contadorDeGraficos == 9) {
+        pincel.moveTo(240, 343);
+        pincel.lineTo(280, 393);
+        pincel.lineTo(275, 398);
+        pincel.lineTo(235, 348);
+        pincel.fill();
+        pincel.beginPath();
     }
 
 }
 
 
 crearPalabraSecreta(), mostrarGuiones();
-
-//DIBUJANDO HORCA
-pincel.fillRect(50,510,10,-400);
-
-pincel.fillRect(60,110,180,10);
-
-pincel.fillRect(230,120,10,50);
-
-//DIBUJANDO CABEZA
-pincel.arc(235,209,40,0,2*3.14);
-pincel.fill();
-pincel.beginPath();
-pincel.fillStyle = "white";
-pincel.arc(235,209,30,0,2*3.14);
-pincel.fill();
-
-//DIBUJANDO TORSO
-pincel.beginPath();
-pincel.fillStyle = "#0A3871";
-pincel.fillRect(230,248,10,100);
-
-//DIBUJANDO BRAZO IZQUIERDO
-pincel.moveTo(230,260);
-pincel.lineTo(205,280);
-pincel.lineTo(210,286);
-pincel.lineTo(230,270);
-pincel.fill();
-
-//DIBUJANDO BRAZO DERECHO
-pincel.moveTo(240,260);
-pincel.lineTo(265,280);
-pincel.lineTo(260,286);
-pincel.lineTo(240,270);
-pincel.fill();
-
-//DIBUJANDO PIERNA IZQUIERDA
-pincel.moveTo(230,343);
-pincel.lineTo(190,393);
-pincel.lineTo(195,398);
-pincel.lineTo(235,348);
-pincel.fill();
-
-//DIBUJANDO PIERNA DERECHA
-pincel.moveTo(240,343);
-pincel.lineTo(280,393);
-pincel.lineTo(275,398);
-pincel.lineTo(235,348);
-pincel.fill();
-pincel.beginPath();
