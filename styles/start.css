@@ -48,10 +48,24 @@ form {
     width: 100%;
 }
 
+.container-input-y-mensaje {
+    height: 60%;
+    width: 40%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .container-input {
     height: fit-content;
-    margin-top: auto;
 }
+
+form .container-input-y-mensaje .mensaje {
+    font-size: 1.5rem;
+    color: red;
+}
+
 /*STYLE PARA container-palabra*/
 .container-palabra {
     height: 7%;
@@ -165,8 +179,11 @@ form {
         height: 50vw;
     }
 
-    form .container-input {
-        margin-top: 0;
+    form .container-input-y-mensaje {
+        height: 5vw;
+        flex-direction: row;
+        width: 50vw;
+        justify-content: space-around;
     }
 
     form .ingresarTexto {
@@ -200,6 +217,11 @@ form {
         width: 40vw;
         height: 70vw;
         max-width: 300px;
+    }
+
+    form .container-input-y-mensaje {
+        flex-direction: column;
+        height: 15vw;
     }
 
     form .container-palabra {

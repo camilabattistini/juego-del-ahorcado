@@ -138,7 +138,21 @@ function dibujarAhorcado() {
         pincel.beginPath();
     }
 
+    else if (contadorDeGraficos == 10) {
+        finDelJuego();
+    }
+
 }
 
+const containerInputYMensaje = document.querySelector(".container-input-y-mensaje");
+
+function finDelJuego() {
+    //dibujo del ahorcado y cartel
+    mensaje = document.createElement("h");
+    mensaje.innerHTML = "Fin del juego!";
+    mensaje.className = "mensaje";
+    containerInputYMensaje.append(mensaje);
+    //boton para reiniciar el juego
+}
 
 crearPalabraSecreta(), mostrarGuiones();
