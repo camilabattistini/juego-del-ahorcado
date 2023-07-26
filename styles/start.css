@@ -66,6 +66,11 @@ form .container-input-y-mensaje .mensaje {
     color: red;
 }
 
+form .container-input-y-mensaje .ganaste {
+    font-size: 1.5rem;
+    color: green;
+}
+
 /*STYLE PARA container-palabra*/
 .container-palabra {
     height: 7%;

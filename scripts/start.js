@@ -43,23 +43,32 @@ function capturarEvento(event) {
     }
 }
 
+var cantidadDeLetrasCorrectas = 0;
+
 function dibujarLetraCorrecta(codigoMayuscula) {
     var cantidadDeLetrasIncorrectas = 0;
     for(var i = 0; i < palabraSecreta.length; i++) {
         if(codigoMayuscula == palabraSecreta[i]) {
             divLetraCorrecta = document.querySelector(`#container-letra${i}`);
             divLetraCorrecta.innerHTML = codigoMayuscula;
-            //ACA TENGO QUE ARMAR EL CODIGO PARA QUE LA LETRA SE MUESTRE POR PANTALLA
+            cantidadDeLetrasCorrectas = cantidadDeLetrasCorrectas + 1;
         }
         else {
             cantidadDeLetrasIncorrectas = cantidadDeLetrasIncorrectas + 1;
         }
     }
+    verificarSiSeCompletoLaPalabra(cantidadDeLetrasCorrectas);
     verificarSiLaLetraEsIncorrecta(cantidadDeLetrasIncorrectas, codigoMayuscula);
 }
 
+function verificarSiSeCompletoLaPalabra(cantidadDeLetrasCorrectas) {
+    if(cantidadDeLetrasCorrectas == palabraSecreta.length) {
+        ganaste();
+        //SE MUESTRA CARTEL
+    }
+}
+
 function verificarSiLaLetraEsIncorrecta(cantidadDeLetrasIncorrectas, codigoMayuscula) {
-    console.log(`La cantidad de letras incorrectas es: ${cantidadDeLetrasIncorrectas}`);
     if(cantidadDeLetrasIncorrectas == palabraSecreta.length) {
         dibujarLetraIncorrecta(codigoMayuscula);
     }
@@ -153,6 +162,20 @@ function finDelJuego() {
     mensaje.className = "mensaje";
     containerInputYMensaje.append(mensaje);
     //boton para reiniciar el juego
+}
+
+function ganaste() {
+    var mensaje = document.createElement("h");
+    mensaje.innerHTML = "Ganaste, Felicidades!";
+    mensaje.className = "ganaste";
+    containerInputYMensaje.append(mensaje);
+}
+
+function crearPalabraNueva() {
+    var palabraNueva = document.querySelector(".ingresarTexto").value;
+    palabraNueva = palabraNueva.toUpperCase();
+    listaPalabras.push(palabraNueva);
+    console.log(listaPalabras);
 }
 
 crearPalabraSecreta(), mostrarGuiones();
