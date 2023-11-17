@@ -1,8 +1,7 @@
-/*import { listaPalabras } from "./ingresarPalabra.js";*/
 const containerLineas = document.querySelector(".container-lineas");
 const containerLetras = document.querySelector(".container-letras");
 const containerLetrasIncorrectas = document.querySelector(".container-letras-incorrectas");
-const listaPalabras = ['HTML', 'CSS', 'JAVASCRIPT', 'ANGULAR', 'REACT', 'NODE']; /*DESPUES TENGO QUE BORRAR ESTO E IMPORTAR LA LISTA DEL ARCHIVO ingresarPalabra.js */
+const listaPalabras = JSON.parse(localStorage.getItem('listaPalabras')) || ['HTML', 'CSS', 'JAVASCRIPT', 'ANGULAR', 'REACT', 'NODE']; /*DESPUES TENGO QUE BORRAR ESTO E IMPORTAR LA LISTA DEL ARCHIVO ingresarPalabra.js */
 var palabraSecreta = '';
 //CANVAS
 var pantalla = document.querySelector("canvas");
@@ -179,3 +178,4 @@ function crearPalabraNueva() {
 }
 
 crearPalabraSecreta(), mostrarGuiones();
+console.log(listaPalabras);

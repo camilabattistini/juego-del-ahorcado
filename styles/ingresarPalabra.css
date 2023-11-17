@@ -79,6 +79,9 @@ form .container-botones {
     background-color: #0A3871;
     color: white;
     border: none;
+    text-decoration:none;
+    justify-content: center;
+    line-height: 2.5rem;
 }
 
 /*PARTE RESPONSIVA*/
