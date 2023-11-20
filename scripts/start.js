@@ -3,6 +3,7 @@ const containerLetras = document.querySelector(".container-letras");
 const containerLetrasIncorrectas = document.querySelector(".container-letras-incorrectas");
 const listaPalabras = JSON.parse(localStorage.getItem('listaPalabras')) || ['HTML', 'CSS', 'JAVASCRIPT', 'ANGULAR', 'REACT', 'NODE']; /*DESPUES TENGO QUE BORRAR ESTO E IMPORTAR LA LISTA DEL ARCHIVO ingresarPalabra.js */
 var palabraSecreta = '';
+
 //CANVAS
 var pantalla = document.querySelector("canvas");
 var pincel = pantalla.getContext("2d");
@@ -10,6 +11,10 @@ var pincel = pantalla.getContext("2d");
 /*ESTRUCTURA*/
 pincel.fillStyle = "#0A3871"
 pincel.fillRect(0,510,300,10);
+
+function desistir() {
+    //funcion para el boton "desistir"
+}
 
 function crearPalabraSecreta() {
     indice = Math.floor(Math.random() * listaPalabras.length)

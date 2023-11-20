@@ -144,8 +144,35 @@ form .container-input-y-mensaje .ganaste {
 #nuevoJuego {
     background-color: #0A3871;
     color: white;
-    border: none;
 }
+
+#nuevoJuego:hover, #desistir:hover {
+    transition: 0.5s;
+    opacity: 0.7;
+    width: 45%;
+    height: 2.8rem;
+}
+
+#nuevoJuego:active, #desistir:active {
+    width: 44%;
+    height: 2.7rem;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#desistir:hover {
+    background-color: #0A3871;
+    opacity: 0.5;
+    color:#edf2f8;
+}
+
+#desistir:active {
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border-color: #0A3871;
+    opacity: 1;
+}
+
 
 
 /*Para iPad*/
@@ -207,6 +234,16 @@ form .container-input-y-mensaje .ganaste {
         height: 100%;
         margin: 0;
     }
+
+    #nuevoJuego:hover, #desistir:hover {
+        width: 47%;
+        height: 105%;
+    }
+
+    #nuevoJuego:active, #desistir:active {
+        width: 46%;
+        height: 102%;
+    }
 }
 
 @media(max-width: 428px) {
@@ -247,5 +284,14 @@ form .container-input-y-mensaje .ganaste {
         width: 100%;
         margin: auto;
         height: 40%;
+    }
+
+    #nuevoJuego:hover, #desistir:hover {
+        width: 100%;
+        height: 45%;
+    }
+
+    #nuevoJuego:active, #desistir:active {
+        height: 43%;
     }
 }
