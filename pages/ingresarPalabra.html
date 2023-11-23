@@ -14,10 +14,10 @@
     </header>
     <main>
         <form>
-            <textarea class="ingresarTexto" cols="40" rows="6" placeholder="Ingrese una palabra"></textarea>
+            <textarea id="palabraNueva" class="ingresarTexto" cols="40" rows="6" placeholder="Ingrese una palabra"></textarea>
             <p class="textoLetrasMinusculas"><span class="signo"> ! </span> Máx. de 8 letras. No se deben utilizar letras con acentos ni caracteres especiales.</p>
             <div class="container-botones">
-                <a type="button" class="boton" id="guardar" onclick="crearPalabraNueva()" href="start.html">Guardar y empezar</a>
+                <button class="boton" id="guardar" onclick="agregarPalabra()">Guardar y empezar</button>
                 <input type="button" value="Cancelar" class="boton" id="cancelar"/>
             </div>
         </form>

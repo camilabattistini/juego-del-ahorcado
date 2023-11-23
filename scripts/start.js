@@ -1,8 +1,39 @@
 const containerLineas = document.querySelector(".container-lineas");
 const containerLetras = document.querySelector(".container-letras");
 const containerLetrasIncorrectas = document.querySelector(".container-letras-incorrectas");
-const listaPalabras = JSON.parse(localStorage.getItem('listaPalabras')) || ['HTML', 'CSS', 'JAVASCRIPT', 'ANGULAR', 'REACT', 'NODE']; /*DESPUES TENGO QUE BORRAR ESTO E IMPORTAR LA LISTA DEL ARCHIVO ingresarPalabra.js */
 var palabraSecreta = '';
+
+
+function guardarLista(palabra) {
+    // Obtiene la lista actual del almacenamiento local
+    let listaPalabras = localStorage.getItem("listaPalabras") ? JSON.parse(localStorage.getItem("listaPalabras")) : ['HTML','CSS','JAVASCRIPT','REACT','NODE'];
+    // Agrega la palabra a la lista
+    listaPalabras.push(palabra);
+    // Guarda la lista actualizada en el almacenamiento local
+    localStorage.setItem("listaPalabras", JSON.stringify(listaPalabras));
+    // Retrasa la redirección a "start.html" en 200 milisegundos
+    setTimeout(() => {
+        // Redirecciona a start.html
+        window.location.href = "start.html";
+    }, 200);
+}
+
+function agregarPalabra() {
+    const palabraNueva = document.getElementById("palabraNueva");
+    const palabra = palabraNueva.value.trim();
+
+    if (palabra !== "") {
+        guardarLista(palabra);
+        palabraNueva.value = "";
+    }
+}
+
+// Obtiene la lista actual del almacenamiento local
+let listaPalabras = localStorage.getItem("listaPalabras") ? JSON.parse(localStorage.getItem("listaPalabras")) : ['HTML','CSS','JAVASCRIPT','REACT','NODE'];
+// Actualiza la lista visible en la página
+listaPalabras.forEach((palabra) => {
+    console.log(palabra); // Aquí puedes realizar alguna acción con cada palabra de la lista.
+});
 
 //CANVAS
 var pantalla = document.querySelector("canvas");
