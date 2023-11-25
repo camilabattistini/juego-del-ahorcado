@@ -3,7 +3,6 @@ const containerLetras = document.querySelector(".container-letras");
 const containerLetrasIncorrectas = document.querySelector(".container-letras-incorrectas");
 var palabraSecreta = '';
 
-
 function guardarLista(palabra) {
     // Obtiene la lista actual del almacenamiento local
     let listaPalabras = localStorage.getItem("listaPalabras") ? JSON.parse(localStorage.getItem("listaPalabras")) : ['HTML','CSS','JAVASCRIPT','REACT','NODE'];
@@ -23,17 +22,20 @@ function agregarPalabra() {
     const palabra = palabraNueva.value.trim();
 
     if (palabra !== "") {
-        guardarLista(palabra);
         palabraNueva.value = "";
+        guardarLista(palabra); // Llama a la función guardarLista() para actualizar la lista y redireccionar a "start.html"
     }
 }
 
 // Obtiene la lista actual del almacenamiento local
 let listaPalabras = localStorage.getItem("listaPalabras") ? JSON.parse(localStorage.getItem("listaPalabras")) : ['HTML','CSS','JAVASCRIPT','REACT','NODE'];
 // Actualiza la lista visible en la página
-listaPalabras.forEach((palabra) => {
-    console.log(palabra); // Aquí puedes realizar alguna acción con cada palabra de la lista.
-});
+listaPalabras = listaPalabras.map(palabra => palabra.toUpperCase());
+console.log(listaPalabras);
+
+
+
+
 
 //CANVAS
 var pantalla = document.querySelector("canvas");
@@ -214,4 +216,3 @@ function crearPalabraNueva() {
 }
 
 crearPalabraSecreta(), mostrarGuiones();
-console.log(listaPalabras);
