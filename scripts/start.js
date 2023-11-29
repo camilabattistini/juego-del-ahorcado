@@ -69,11 +69,18 @@ function mostrarGuiones() {
     }
 }
 
+let listaLetrasIngresadas = []; // es la lista que se me arma y se va actualizando cada vez que yo ingrese una letra nueva.
+// la función de esta lista es que si yo quiero ingresar de nuevo la misma letra, que no se guarde de nuevo.
+
 function capturarEvento(event) {
     var codigo = event.which || event.keyCode;
     if(codigo >= 65 && codigo <= 90) {
         var codigoMayuscula = String.fromCharCode(codigo);
+        if(!listaLetrasIngresadas.includes(codigoMayuscula)) {
+            listaLetrasIngresadas.push(codigoMayuscula);
+        }
         dibujarLetraCorrecta(codigoMayuscula);
+        console.log("la lista de letras ingresadas es: " + listaLetrasIngresadas);
     }
     else {
         console.log("Solo se permiten letras");
@@ -81,6 +88,15 @@ function capturarEvento(event) {
 }
 
 var cantidadDeLetrasCorrectas = 0;
+
+// quiero que cuando escriba la misma letra que ya había escrito, esta se considere como "ya usada"
+// y que no se vuelva a contar (es decir, en el contador de cantidad de letras correctas no se tiene que agregar + 1)
+//
+// "si la letra es igual a una de las letras que ya escribí, entonces no se considera"
+//
+// lo que quiero es que esa lista final de las letras que ingresé se compare con la lista
+// de las letras que contiene la palabra secreta. Entonces, si mi lista contiene todas
+// las letras de a otra lista, significa que gané.
 
 function dibujarLetraCorrecta(codigoMayuscula) {
     var cantidadDeLetrasIncorrectas = 0;
@@ -94,12 +110,15 @@ function dibujarLetraCorrecta(codigoMayuscula) {
             cantidadDeLetrasIncorrectas = cantidadDeLetrasIncorrectas + 1;
         }
     }
-    verificarSiSeCompletoLaPalabra(cantidadDeLetrasCorrectas);
+    verificarSiSeCompletoLaPalabra(listaLetrasIngresadas);
     verificarSiLaLetraEsIncorrecta(cantidadDeLetrasIncorrectas, codigoMayuscula);
 }
 
-function verificarSiSeCompletoLaPalabra(cantidadDeLetrasCorrectas) {
-    if(cantidadDeLetrasCorrectas == palabraSecreta.length) {
+function verificarSiSeCompletoLaPalabra(listaLetrasIngresadas) {
+    // vuelvo a la palabra secreta en una lista
+    palabraSecretaSplit = Array.from(new Set(palabraSecreta.split("")));
+    console.log("palabraSecretaSplit: " + palabraSecretaSplit);
+    if(Array.isArray(listaLetrasIngresadas) && palabraSecretaSplit.every(elemento => listaLetrasIngresadas.includes(elemento))) {
         ganaste();
         //SE MUESTRA CARTEL
     }
