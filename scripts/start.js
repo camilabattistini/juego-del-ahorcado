@@ -2,6 +2,10 @@ const containerLineas = document.querySelector(".container-lineas");
 const containerLetras = document.querySelector(".container-letras");
 const containerLetrasIncorrectas = document.querySelector(".container-letras-incorrectas");
 var palabraSecreta = '';
+var input = document.querySelector(".container-input");
+input.blur();
+input.value = "";
+input.focus();
 
 function guardarLista(palabra) {
     // Obtiene la lista actual del almacenamiento local
@@ -79,12 +83,18 @@ function capturarEvento(event) {
         if(!listaLetrasIngresadas.includes(codigoMayuscula)) {
             listaLetrasIngresadas.push(codigoMayuscula);
         }
+        else {
+            alert("Ya ingresaste esta letra. Probá de nuevo :)");
+        }
         dibujarLetraCorrecta(codigoMayuscula);
         console.log("la lista de letras ingresadas es: " + listaLetrasIngresadas);
     }
     else {
         console.log("Solo se permiten letras");
     }
+    input.blur();
+    input.value = "";
+    input.focus();
 }
 
 var cantidadDeLetrasCorrectas = 0;
@@ -126,7 +136,9 @@ function verificarSiSeCompletoLaPalabra(listaLetrasIngresadas) {
 
 function verificarSiLaLetraEsIncorrecta(cantidadDeLetrasIncorrectas, codigoMayuscula) {
     if(cantidadDeLetrasIncorrectas == palabraSecreta.length) {
-        dibujarLetraIncorrecta(codigoMayuscula);
+        if(!listaLetrasIncorrectas.includes(codigoMayuscula)) {
+            dibujarLetraIncorrecta(codigoMayuscula);
+        }
     }
 }
 
@@ -200,10 +212,17 @@ function dibujarAhorcado() {
         pincel.lineTo(275, 398);
         pincel.lineTo(235, 348);
         pincel.fill();
-        pincel.beginPath();
+        //pincel.beginPath();
     }
 
     else if (contadorDeGraficos == 10) {
+        // Dibujando la soga
+        pincel.beginPath();
+        pincel.fillStyle = "#0A3871";
+        pincel.lineWidth = 5; // Ampliar el grosor de la soga
+        pincel.moveTo(199, 217);
+        pincel.quadraticCurveTo(235, 300, 271, 217);
+        pincel.stroke();
         finDelJuego();
     }
 
