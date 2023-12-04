@@ -218,7 +218,7 @@ function dibujarAhorcado() {
     else if (contadorDeGraficos == 10) {
         // Dibujando la soga
         pincel.beginPath();
-        pincel.fillStyle = "#0A3871";
+        pincel.strokeStyle = "#0A3871";
         pincel.lineWidth = 5; // Ampliar el grosor de la soga
         pincel.moveTo(199, 217);
         pincel.quadraticCurveTo(235, 300, 271, 217);
