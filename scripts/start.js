@@ -3,6 +3,7 @@ const containerLetras = document.querySelector(".container-letras");
 const containerLetrasIncorrectas = document.querySelector(".container-letras-incorrectas");
 var palabraSecreta = '';
 var input = document.querySelector(".container-input");
+// Se borra el contenido del imput y se establece el enfoque
 input.blur();
 input.value = "";
 input.focus();
@@ -23,7 +24,7 @@ function guardarLista(palabra) {
 
 function agregarPalabra() {
     const palabraNueva = document.getElementById("palabraNueva");
-    const palabra = palabraNueva.value.trim();
+    const palabra = palabraNueva.value.trim(); // .trim() elimina los espacios en blanco antes y después del valor ingresado
 
     if (palabra !== "") {
         palabraNueva.value = "";
@@ -35,28 +36,16 @@ function agregarPalabra() {
 let listaPalabras = localStorage.getItem("listaPalabras") ? JSON.parse(localStorage.getItem("listaPalabras")) : ['HTML','CSS','JAVASCRIPT','REACT','NODE'];
 // Actualiza la lista visible en la página
 listaPalabras = listaPalabras.map(palabra => palabra.toUpperCase());
-console.log(listaPalabras);
 
-
-
-
-
-//CANVAS
-var pantalla = document.querySelector("canvas");
-var pincel = pantalla.getContext("2d");
-
-/*ESTRUCTURA*/
-pincel.fillStyle = "#0A3871"
-pincel.fillRect(0,510,300,10);
 
 function desistir() {
     //funcion para el boton "desistir"
 }
 
 function crearPalabraSecreta() {
+    // Selecciona aleatoriamente una palabra de listaPalabras y la guarda como "palabraSecreta"
     indice = Math.floor(Math.random() * listaPalabras.length)
     palabraSecreta = listaPalabras[indice];
-    console.log(palabraSecreta);
     return palabraSecreta;
 }
 
@@ -81,32 +70,22 @@ function capturarEvento(event) {
     if(codigo >= 65 && codigo <= 90) {
         var codigoMayuscula = String.fromCharCode(codigo);
         if(!listaLetrasIngresadas.includes(codigoMayuscula)) {
-            listaLetrasIngresadas.push(codigoMayuscula);
+            listaLetrasIngresadas.push(codigoMayuscula); // si la lista no incluye la letra que estoy ingresando, se guarda
         }
-        else {
+        else { // sino, se muestra un cartel avisando que ya había ingresado esa letra antes
             alert("Ya ingresaste esta letra. Probá de nuevo :)");
         }
         dibujarLetraCorrecta(codigoMayuscula);
-        console.log("la lista de letras ingresadas es: " + listaLetrasIngresadas);
     }
     else {
-        console.log("Solo se permiten letras");
+        alert("Solo se permiten letras");
     }
+    // Se borra el contenido del imput y se establece el enfoque cada vez que ingrese una letra nueva
     input.blur();
     input.value = "";
     input.focus();
 }
 
-var cantidadDeLetrasCorrectas = 0;
-
-// quiero que cuando escriba la misma letra que ya había escrito, esta se considere como "ya usada"
-// y que no se vuelva a contar (es decir, en el contador de cantidad de letras correctas no se tiene que agregar + 1)
-//
-// "si la letra es igual a una de las letras que ya escribí, entonces no se considera"
-//
-// lo que quiero es que esa lista final de las letras que ingresé se compare con la lista
-// de las letras que contiene la palabra secreta. Entonces, si mi lista contiene todas
-// las letras de a otra lista, significa que gané.
 
 function dibujarLetraCorrecta(codigoMayuscula) {
     var cantidadDeLetrasIncorrectas = 0;
@@ -114,7 +93,6 @@ function dibujarLetraCorrecta(codigoMayuscula) {
         if(codigoMayuscula == palabraSecreta[i]) {
             divLetraCorrecta = document.querySelector(`#container-letra${i}`);
             divLetraCorrecta.innerHTML = codigoMayuscula;
-            cantidadDeLetrasCorrectas = cantidadDeLetrasCorrectas + 1;
         }
         else {
             cantidadDeLetrasIncorrectas = cantidadDeLetrasIncorrectas + 1;
@@ -146,12 +124,18 @@ listaLetrasIncorrectas = [];
 
 function dibujarLetraIncorrecta(codigoMayuscula) {
     listaLetrasIncorrectas.push(codigoMayuscula);
-    console.log(listaLetrasIncorrectas);
     containerLetrasIncorrectas.innerHTML = listaLetrasIncorrectas.toString().replace(/,/g, " ");
     dibujarAhorcado();
 }
 
-// const listaDeGraficos = {1 : pincel.fillRect(50,510,10,-400), 2 : "Dibujando cabeza", 3 : "Dibujando tronco", 4 : "Dibujando pie izquierdo", 5 : "Dibujando pie derecho", 6 : "Dibujando brazo izquierdo"};
+
+//CANVAS
+var pantalla = document.querySelector("canvas");
+var pincel = pantalla.getContext("2d");
+
+/*ESTRUCTURA*/
+pincel.fillStyle = "#0A3871"
+pincel.fillRect(0,510,300,10);
 
 function dibujarAhorcado() {
     var contadorDeGraficos = listaLetrasIncorrectas.length;
@@ -236,7 +220,6 @@ function finDelJuego() {
     mensaje.innerHTML = "Fin del juego!";
     mensaje.className = "mensaje";
     containerInputYMensaje.append(mensaje);
-    //boton para reiniciar el juego
 }
 
 function ganaste() {
