@@ -22,17 +22,20 @@ header {
 }
 
 .boton {
-    font-size: 17px; 
+    font-size: 14px; 
     display: flex;
     flex-direction: column;
     margin: 1rem auto;
-    text-align: center;
-    /* justify-content: center; */
+    border-radius: 13px;
+    /*text-align: center;*/
+    /*justify-content: center;*/ 
 }
 
 #iniciarJuego {
     height: 4rem;
     width: 15rem;
+    font-size: 17px;
+    border-radius: 19px;
     background-color: #0A3871;
     color: white;
     justify-content: center;
@@ -41,4 +44,38 @@ header {
 #agregarNuevaPalabra {
     height: 2rem;
     width: 12rem;
+    color: #0A3871;
+    background-color: #D8DFE8;
+    border-color: #0A3871;
+}
+
+#iniciarJuego:hover, #agregarNuevaPalabra:hover {
+    transition: 0.5s;
+    opacity: 0.7;
+    width: 16rem;
+    height: 5rem;
+}
+
+#iniciarJuego:active, #agregarNuevaPalabra:active {
+    width: 15rem;
+    height: 4rem;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#agregarNuevaPalabra:hover {
+    background-color: #0A3871;
+    opacity: 0.5;
+    color:#edf2f8;
+    width: 14rem;
+    height: 2.5rem;
+}
+
+#agregarNuevaPalabra:active {
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border-color: #0A3871;
+    opacity: 1;
+    width: 13rem;
+    height: 2rem;
 }

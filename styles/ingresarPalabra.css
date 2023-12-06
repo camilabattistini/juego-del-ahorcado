@@ -84,6 +84,28 @@ form .container-botones {
     line-height: 2.5rem;
 }
 
+#guardar:hover, #cancelar:hover {
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+#guardar:active, #cancelar:active {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#cancelar:hover {
+    background-color: #0A3871;
+    opacity: 0.5;
+    color:#edf2f8;
+}
+
+#cancelar:active {
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border-color: #0A3871;
+}
+
 /*PARTE RESPONSIVA*/
 
 /*TABLET (810px X 1080px)*/
