@@ -66,27 +66,30 @@ let listaLetrasIngresadas = []; // es la lista que se me arma y se va actualizan
 // la función de esta lista es que si yo quiero ingresar de nuevo la misma letra, que no se guarde de nuevo.
 
 function capturarEvento(event) {
-    var codigo = event.which || event.keyCode;
-    if(codigo >= 65 && codigo <= 90) {
-        var codigoMayuscula = String.fromCharCode(codigo);
-        if(!listaLetrasIngresadas.includes(codigoMayuscula)) {
-            listaLetrasIngresadas.push(codigoMayuscula); // si la lista no incluye la letra que estoy ingresando, se guarda
+    if (input.value !== "") {
+        var codigo = event.which || event.keyCode;
+        if (codigo >= 65 && codigo <= 90) {
+            var codigoMayuscula = String.fromCharCode(codigo);
+            if (!listaLetrasIngresadas.includes(codigoMayuscula)) {
+                listaLetrasIngresadas.push(codigoMayuscula); // si la lista no incluye la letra que estoy ingresando, se guarda
+            }
+            else { // sino, se muestra un cartel avisando que ya había ingresado esa letra antes
+                alert("Ya ingresaste esta letra. Probá de nuevo :)");
+            }
+            dibujarLetraCorrecta(codigoMayuscula);
         }
-        else { // sino, se muestra un cartel avisando que ya había ingresado esa letra antes
-            alert("Ya ingresaste esta letra. Probá de nuevo :)");
+        else {
+            alert("Solo se permiten letras");
         }
-        dibujarLetraCorrecta(codigoMayuscula);
+        // Se borra el contenido del imput y se establece el enfoque cada vez que ingrese una letra nueva
+        input.blur();
+        input.value = "";
+        input.focus();
     }
-    else {
-        alert("Solo se permiten letras");
-    }
-    // Se borra el contenido del imput y se establece el enfoque cada vez que ingrese una letra nueva
-    input.blur();
-    input.value = "";
-    input.focus();
+    
 }
 
-input.addEventListener("input", capturarEvento);
+//input.addEventListener("input", capturarEvento);
 
 
 function dibujarLetraCorrecta(codigoMayuscula) {
