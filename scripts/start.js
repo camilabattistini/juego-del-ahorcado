@@ -86,6 +86,8 @@ function capturarEvento(event) {
     input.focus();
 }
 
+input.addEventListener("input", capturarEvento);
+
 
 function dibujarLetraCorrecta(codigoMayuscula) {
     var cantidadDeLetrasIncorrectas = 0;
