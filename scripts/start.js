@@ -65,9 +65,9 @@ function mostrarGuiones() {
 let listaLetrasIngresadas = []; // es la lista que se me arma y se va actualizando cada vez que yo ingrese una letra nueva.
 // la función de esta lista es que si yo quiero ingresar de nuevo la misma letra, que no se guarde de nuevo.
 
-function capturarEvento(event) {
+function capturarEvento() {
     if (input.value !== "") {
-        var codigo = event.which || event.keyCode;
+        var codigo = input.value.toUpperCase().charCodeAt();
         if (codigo >= 65 && codigo <= 90) {
             var codigoMayuscula = String.fromCharCode(codigo);
             if (!listaLetrasIngresadas.includes(codigoMayuscula)) {
@@ -86,10 +86,9 @@ function capturarEvento(event) {
         input.value = "";
         input.focus();
     }
-    
 }
 
-//input.addEventListener("input", capturarEvento);
+input.addEventListener("input", capturarEvento);
 
 
 function dibujarLetraCorrecta(codigoMayuscula) {
