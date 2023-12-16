@@ -79,3 +79,11 @@ header {
     width: 13rem;
     height: 2rem;
 }
+
+@media (max-width: 767px) {
+    body {
+        min-height: 360px;
+        max-height: 412px;
+    }
+    
+}
