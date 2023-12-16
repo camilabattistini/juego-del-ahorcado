@@ -28,7 +28,7 @@ header {
     margin: 1rem auto;
     border-radius: 13px;
     /*text-align: center;*/
-    /*justify-content: center;*/ 
+    justify-content: center;
 }
 
 #iniciarJuego {
@@ -38,7 +38,7 @@ header {
     border-radius: 19px;
     background-color: #0A3871;
     color: white;
-    justify-content: center;
+    /*justify-content: center;*/
 }
 
 #agregarNuevaPalabra {
