@@ -1,9 +1,5 @@
-body {
-    height: 600px;
-}
-
 header {
-    height: 10%;
+    padding: 3vh 0;
 }
 
 .logo {
@@ -11,14 +7,16 @@ header {
 }
 
 .main {
-    height: 80%;
+/*    height: 80%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column;*/
+    padding: 20vh 0;
+    margin:2vh 0;
 }
 
 .containerBotones {
-    margin: auto;
+    padding: 4vh 0;
 }
 
 .boton {
@@ -85,5 +83,28 @@ header {
         min-height: 360px;
         max-height: 412px;
     }
+
+    header {
+        margin: 2vh 0;
+    }
+
+    .main {
+    /*    height: auto;*/
+        margin: 3vh 0;
+    }
     
+    .boton {
+        font-size: 12px;
+        margin: 0.5rem auto;
+    }
+    
+    #iniciarJuego {
+        max-height: 4rem;
+        height: 9vh;
+    }
+
+    #agregarNuevaPalabra {
+        max-height: 2rem;
+        height: 10vh;
+    }
 }
