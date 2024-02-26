@@ -1,9 +1,5 @@
-body {
-    height: 600px;
-}
-
 header {
-    height: 10%;
+    padding: 1vh 0;
 }
 
 .logo {
@@ -14,13 +10,10 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 80%;
 }
 
 form {
     margin: 0 auto;
-    height: 100%;
-    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,33 +21,31 @@ form {
 }
 
 .container-ahorcado-e-input {
-    height: 70%;
-    width: 70%;
+    width: 70vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: inherit;
     align-items: flex-end;
+    max-width: 500px;
 }
 
 /*STYLE PARA container-ahorcado*/
 .container-ahorcado {
-    height: 95%;
-    width: 50%;
-    max-width: 235px;
+    width: 22vw;
+    max-width: 200px;
+}
+
+.container-input-y-mensaje {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 7rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #graficoAhorcado {
     height: 100%;
     width: 100%;
-}
-
-.container-input-y-mensaje {
-    height: 60%;
-    width: 40%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .container-input {
@@ -73,12 +64,15 @@ form .container-input-y-mensaje .ganaste {
 
 /*STYLE PARA container-palabra*/
 .container-palabra {
-    height: 7%;
+    height: 2rem;
     width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    max-width: 770px;
 }
 /*STYLE para container-letras*/
 .container-letras {
@@ -113,13 +107,15 @@ form .container-input-y-mensaje .ganaste {
 
 .container-letras-incorrectas {
     background-color: #ecebeb;
-    width: 70%;
-    height: 7%;
+    width: 70vw;
+    height: 7vh;
     text-align: center;
     color: #0A3871;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0.5rem;
+    max-width: 800px;
 }
 /*STYLE PARA container-botones*/
 .container-botones {
@@ -129,6 +125,8 @@ form .container-input-y-mensaje .ganaste {
     width: 80%;
     justify-content: space-around;
     align-items: center;
+    margin: 1rem;
+    max-width: 500px;
 }
 
 .boton {
