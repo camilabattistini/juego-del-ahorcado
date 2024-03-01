@@ -7,10 +7,9 @@ header {
 }
 
 .main {
-/*    height: 80%;
     display: flex;
     justify-content: center;
-    flex-direction: column;*/
+    flex-direction: column;
     padding: 20vh 0;
     margin:2vh 0;
 }
@@ -79,18 +78,37 @@ header {
 }
 
 @media (max-width: 767px) {
-    body {
-        min-height: 360px;
-        max-height: 412px;
-    }
 
     header {
-        margin: 2vh 0;
+        padding: 2vh 0;
+    }
+
+    .logo {
+        width: 7rem;
     }
 
     .main {
-    /*    height: auto;*/
-        margin: 3vh 0;
+        padding: 0 2vw 0;
+        height: 75vh;
+    }
+
+    .form .container-input-y-mensaje {
+        margin-top: 1.5rem;
+    }
+
+    .container-palabra {
+        width: 70vw;
+    }
+
+    .container-letras-incorrectas {
+        height: 4vh;
+        margin: 1rem;
+    }
+
+    .container-botones {
+        width: 75vw;
+        margin: 1rem 0 0;
+        height: 2.5rem;
     }
     
     .boton {
