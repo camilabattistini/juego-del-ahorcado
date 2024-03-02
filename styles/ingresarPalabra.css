@@ -52,12 +52,6 @@ form .container-botones {
     margin: 0;
 }
 
-.campoIzquierda .container {
-    display: flex;
-    margin: 0 5%;
-    justify-content: space-between;
-}
-
 .boton {
     display: flex;
     flex-direction: row;
@@ -158,8 +152,8 @@ form .container-botones {
 
     form .container-botones {
         flex-direction: column;
-        justify-content: space-around;
-        height: 15%;
+        justify-content: space-evenly;
+        height: 15vh;
         align-items: center;
     }
 

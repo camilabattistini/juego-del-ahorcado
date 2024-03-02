@@ -23,7 +23,6 @@ header {
     flex-direction: column;
     margin: 1rem auto;
     border-radius: 13px;
-    /*text-align: center;*/
     justify-content: center;
 }
 
@@ -34,7 +33,6 @@ header {
     border-radius: 19px;
     background-color: #0A3871;
     color: white;
-    /*justify-content: center;*/
 }
 
 #agregarNuevaPalabra {
@@ -90,19 +88,6 @@ header {
         height: 75vh;
     }
 
-    .form .container-input-y-mensaje {
-        margin-top: 1.5rem;
-    }
-
-    .container-palabra {
-        width: 70vw;
-    }
-
-    .container-letras-incorrectas {
-        height: 4vh;
-        margin: 1rem;
-    }
-
     .container-botones {
         width: 75vw;
         margin: 1rem 0 0;
@@ -117,10 +102,12 @@ header {
     #iniciarJuego {
         max-height: 4rem;
         height: 9vh;
+        text-align: center;
     }
 
     #agregarNuevaPalabra {
         max-height: 2rem;
         height: 10vh;
+        text-align: center;
     }
 }
