@@ -10,8 +10,7 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 20vh 0;
-    margin:2vh 0;
+    height: 76vh;
 }
 
 .containerBotones {
@@ -88,7 +87,6 @@ header {
     }
 
     .main {
-        padding: 0 2vw 0;
         height: 75vh;
     }
 

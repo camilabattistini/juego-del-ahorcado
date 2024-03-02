@@ -2,33 +2,25 @@
     font-size: 17px;
 }
 
-body {
-    height: 600px;
-    /*background-color: #F3F5FC;*/
-    /*display: inline-block;*/
-}
-
 header {
-    height: 10%;
+    padding: 1vh 0;
 }
 
 .logo {
-    width: 100px;
-    /* float: left top; */
-    margin: 10px;
+    width: 6rem;
 }
 
 main {
     display: flex;
-    height: 80%;
+    height: 80vh;
 }
 
 form {
     margin: 0 auto;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 form .container-botones {
@@ -38,10 +30,12 @@ form .container-botones {
 }
 
 .ingresarTexto {
-    width: 500px;
-    height: 300px;
+    width: 50vw;
+    height: 40vh;
     border: none;
     color: #0A3871;
+    max-width: 500px;
+    max-height: 300px;
 }
 
 .signo {
@@ -111,21 +105,30 @@ form .container-botones {
 /*TABLET (810px X 1080px)*/
 
 @media(max-width: 810px) {
-    body {
-        height: 1080px;
-    }
 
     main {
-        height: 90%;
+        height: 75vh;
     }
 
     form {
-        margin: 7rem auto;
-        width: 90%;
+        padding: 10vh 4vw;
+        width: 90vw;
     }
 
     .ingresarTexto {
-        width: 100%;
+        max-width: 400px;
+        width: 65%;
+        height: 30%;
+    }
+
+    .textoLetrasMinusculas {
+        margin: 0 5vw;
+        text-align: center;
+    }
+
+    form .container-botones {
+        width: 65%;
+        min-width: 364px;
     }
 
 }
@@ -135,13 +138,14 @@ form .container-botones {
 @media (max-width: 428px) {
     main {
         flex-direction: column;
-        height: 70%;
+        height: 79vh;
     }
 
     form {
-        margin: 15% auto 0;
         height: 100%;
         width: 95%;
+        padding: 0;
+        justify-content: space-evenly;
     }
 
     .ingresarTexto {
@@ -155,11 +159,11 @@ form .container-botones {
     form .container-botones {
         flex-direction: column;
         justify-content: space-around;
-        height: 24%;
+        height: 15%;
+        align-items: center;
     }
 
     .boton {
-        width: 100%;
-        height: 34%;
+        width: 50%;
     }
 }
